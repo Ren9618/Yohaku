@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>購入完了 - Yohaku（よはく）</title>
+<meta name="description" content="Yohakuのご購入ありがとうございます。ライセンスキーの確認ページです。">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../_brand/icon-180.png">
+<link rel="stylesheet" href="../../style.css">
+<style>
+/* このページ固有の調整 */
+.done-inner { text-align: center; }
+.done-card { text-align: left; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="https://ren9618.github.io/Yohaku/">
+      <svg class="brand-mark" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+        <rect width="256" height="256" rx="56" fill="#0E1116"/>
+        <path d="M198.9 140.5A72 72 0 1 1 115.5 57.1" fill="none" stroke="#FFEA00"
+              stroke-width="38" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Yohaku</span>
+    </a>
+  </div>
+</header>
+
+<main class="done-main">
+  <div class="container done-inner">
+    <h1 class="done-title" id="done-title">購入ありがとうございます</h1>
+    <p class="done-lead" id="done-lead">ただいま購入内容を確認しています…</p>
+
+    <div class="done-card" id="done-card" hidden>
+      <h2>Yohaku（よはく） ライセンス</h2>
+      <p class="done-product">買い切り・永久版（サブスクリプションなし／最大3台で利用可能）</p>
+      <p class="done-key-label">ライセンスキー</p>
+      <div class="done-key-row">
+        <code class="license-key" id="license-key"></code>
+        <button type="button" class="copy-btn" id="copy-btn">コピー</button>
+      </div>
+      <p class="done-note">※ キーはメールでも送付済みです。</p>
+      <p class="done-guide">アプリのライセンス入力欄にこのキーを貼り付けてください。</p>
+      <div class="done-actions">
+        <a class="btn" href="https://github.com/Ren9618/Yohaku/releases/latest/download/Yohaku-Setup.exe">インストーラー版（推奨）をダウンロード</a>
+        <a class="btn btn-sub" href="https://github.com/Ren9618/Yohaku/releases/latest/download/Yohaku-Portable.zip">ポータブル版（zip）</a>
+      </div>
+    </div>
+
+    <p class="done-mail">
+      ご不明な点は <a href="mailto:support@mikumiku.online">support@mikumiku.online</a> までご連絡ください。
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="copyright">Copyright (c) 2026 Rayno Works (Ren9618)</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var ENDPOINT = "https://license.mikumiku.online/api/v1/purchase/result";
+  // Webhook の発行が数秒遅れることがあるため、404 の間は2秒間隔で最大6回リトライする
+  var RETRY_INTERVAL_MS = 2000;
+  var MAX_RETRIES = 6;
+
+  var titleEl = document.getElementById("done-title");
+  var leadEl = document.getElementById("done-lead");
+  var cardEl = document.getElementById("done-card");
+  var keyEl = document.getElementById("license-key");
+  var copyBtn = document.getElementById("copy-btn");
+
+  // 汎用表示（session_id 無し・product 不一致・照会失敗時）
+  function showGeneric() {
+    titleEl.textContent = "購入ありがとうございます";
+    leadEl.textContent = "ライセンスキーはメールでお送りしています。届いたメールに記載のキーを、アプリのライセンス入力欄に入力してください。";
+    cardEl.hidden = true;
+  }
+
+  // キー発行待ちのフォールバック表示
+  function showPending() {
+    titleEl.textContent = "購入ありがとうございます";
+    leadEl.textContent = "ただいまライセンスキーを発行処理中です。キーはメールでも送付されますので、しばらく待ってからメールをご確認ください。";
+    cardEl.hidden = true;
+  }
+
+  function showSuccess(data) {
+    titleEl.textContent = "購入が完了しました";
+    leadEl.textContent = "Yohakuをご購入いただきありがとうございます。";
+    keyEl.textContent = data.licenseKey;
+    cardEl.hidden = false;
+  }
+
+  function poll(sessionId, attempt) {
+    fetch(ENDPOINT + "?session_id=" + encodeURIComponent(sessionId))
+      .then(function (res) {
+        if (res.status === 404) {
+          // Webhook 発行待ちの可能性 → リトライ
+          if (attempt < MAX_RETRIES) {
+            setTimeout(function () { poll(sessionId, attempt + 1); }, RETRY_INTERVAL_MS);
+            return null;
+          }
+          showPending();
+          return null;
+        }
+        if (!res.ok) {
+          showGeneric();
+          return null;
+        }
+        return res.json();
+      })
+      .then(function (data) {
+        if (!data) return; // リトライ予約済み
+        // product が yohaku 以外のセッションはキーを表示しない
+        if (data && data.licenseKey && data.product === "yohaku") {
+          showSuccess(data);
+        } else {
+          showGeneric();
+        }
+      })
+      .catch(function () {
+        showGeneric();
+      });
+  }
+
+  var params = new URLSearchParams(location.search);
+  var sessionId = params.get("session_id");
+
+  if (!sessionId) {
+    showGeneric();
+    return;
+  }
+  poll(sessionId, 1);
+
+  // ライセンスキーのコピーボタン
+  copyBtn.addEventListener("click", function () {
+    var text = keyEl.textContent;
+    if (!text) return;
+    var done = function () {
+      copyBtn.textContent = "コピーしました";
+      copyBtn.disabled = true;
+      setTimeout(function () {
+        copyBtn.textContent = "コピー";
+        copyBtn.disabled = false;
+      }, 2000);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text, done); });
+    } else {
+      fallbackCopy(text, done);
+    }
+  });
+
+  function fallbackCopy(text, done) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      if (document.execCommand("copy")) done();
+    } catch (e) { /* 何もしない（キーは手動選択でコピー可能） */ }
+    document.body.removeChild(ta);
+  }
+})();
+</script>
+
+</body>
+</html>
