@@ -77,7 +77,11 @@
           ダウンロードすると7日間、すべての機能を無料で使えます（体験版）。<br>
           継続利用にはライセンス購入が必要です。<br>
           ポータブル版はインストール不要。zipを展開してすぐ使えます。<br>
-          現在のバージョン: <strong>1.0.0</strong>
+          現在のバージョン: <strong>1.1.0</strong>
+        </p>
+        <p class="dl-legacy">
+          v1.1 からは任意のアップデート確認機能が入りました。確認そのものもしたくない方のために、アップデート確認なしの <strong>v1.0.0</strong> も引き続き配布しています。ライセンスキーはどちらの版でも使えます。<br>
+          <a href="https://github.com/Ren9618/Yohaku/releases/download/v1.0.0/Yohaku-Setup.exe">v1.0.0 インストーラー版</a> ／ <a href="https://github.com/Ren9618/Yohaku/releases/download/v1.0.0/Yohaku-Portable.zip">v1.0.0 ポータブル版（zip）</a>
         </p>
         <p class="hero-price">
           買い切り 定価 <s>¥1,980</s> ／ 発売記念 <strong>¥1,480</strong>
@@ -90,7 +94,7 @@
         <div class="mock-titlebar">
           <span class="tb-dot" aria-hidden="true"></span><span class="tb-dot" aria-hidden="true"></span><span class="tb-dot" aria-hidden="true"></span>
           <span class="tb-title">Yohaku</span>
-          <span class="tb-badge">v1.0.0</span>
+          <span class="tb-badge">v1.1.0</span>
         </div>
         <div class="mock-body">
           <div class="mock-side">
@@ -161,7 +165,7 @@
       </div>
       <ul class="policy-list" aria-label="動作方針">
         <li>管理者権限不要（読める範囲を解析）</li>
-        <li>ネットワーク通信なし</li>
+        <li>解析データの外部送信なし</li>
         <li>テレメトリなし</li>
       </ul>
     </div>
@@ -213,13 +217,13 @@
         <p class="price-badge">発売記念価格</p>
         <p class="price-main">¥1,480<span class="price-tax">（税込）</span></p>
         <p class="price-list">定価 <s>¥1,980</s></p>
-        <p class="price-term">発売記念価格の適用期間：リリース日から2週間</p>
+        <p class="price-term">発売記念価格の適用期間：リリース日から2週間（〜11月23日まで）</p>
         <ul class="price-facts">
           <li>買い切り（サブスクリプションなし）</li>
           <li>全機能7日間体験版あり</li>
           <li>返金は購入後7日間無条件</li>
           <li>管理者権限は不要</li>
-          <li>ネットワーク通信なし</li>
+          <li>解析データの外部送信なし</li>
         </ul>
         <button type="button" class="btn btn-buy" id="buy-button">発売記念価格 ¥1,480 で購入する</button>
         <p class="buy-error" id="buy-error" hidden role="alert">決済ページを開けませんでした。時間をおいて再度お試しください。解決しない場合は support@mikumiku.online へご連絡ください。</p>
@@ -227,6 +231,7 @@
           <a class="btn btn-sub" href="https://github.com/Ren9618/Yohaku/releases/latest/download/Yohaku-Setup.exe">インストーラー版（推奨）</a>
           <a class="btn btn-sub" href="https://github.com/Ren9618/Yohaku/releases/latest/download/Yohaku-Portable.zip">ポータブル版（zip）</a>
         </div>
+        <p class="dl-legacy dl-legacy-price">アップデート確認なし版（v1.0.0）: <a href="https://github.com/Ren9618/Yohaku/releases/download/v1.0.0/Yohaku-Setup.exe">インストーラー</a> ／ <a href="https://github.com/Ren9618/Yohaku/releases/download/v1.0.0/Yohaku-Portable.zip">ポータブル（zip）</a></p>
         <p class="buy-note">まずはダウンロードして7日間お試しいただけます（全機能・無料）。継続利用にはライセンス購入が必要です。</p>
       </div>
       <p class="price-note">※ 価格はすべて税込です。ライセンスは買い切り（永久版）で、最大3台で利用できます。</p>
@@ -242,7 +247,7 @@
         <li>Windows 10（バージョン 2004 / ビルド 19041 以降）</li>
       </ul>
       <p class="section-note">
-        動作環境はバージョン 1.0.0 時点のものです。
+        動作環境はバージョン 1.1.0 時点のものです。
         <strong>変更する場合はこのページで事前に告知します。</strong>
       </p>
     </div>
@@ -270,6 +275,10 @@
           <p>Windows 11、および Windows 10（バージョン 2004 / ビルド 19041 以降）に対応しています。</p>
         </details>
         <details>
+          <summary>アップデートは自動で行われますか？</summary>
+          <p>いいえ。既定では「アップデートを確認」ボタンを押したときだけ、GitHub で最新版を確認します。設定で起動時の自動確認に変えることもできますが、新版があっても自動でダウンロード・インストールはされません。また、アップデート確認そのものがない v1.0.0（アップデート確認なし版）も配布しています。</p>
+        </details>
+        <details>
           <summary>ライセンスは何台で使えますか？</summary>
           <p>購入したライセンスキーは、最大3台で利用できます。</p>
         </details>
@@ -287,7 +296,11 @@
         </details>
         <details>
           <summary>個人情報やファイル情報が送信されますか？</summary>
-          <p>ネットワーク通信を行いません。解析はすべてPC内で完結します。</p>
+          <p>スキャン・解析のデータが外部に送信されることはありません。解析はすべてPC内で完結します。通信が発生するのは、(1) ライセンスの確認、(2) アップデートの確認（既定は手動ボタン押下時のみ。設定で起動時確認に変更した場合のみ自動）、(3) フィードバックフォームを開くとき（ご自身のブラウザでの操作）のみです。</p>
+        </details>
+        <details>
+          <summary>フィードバックや要望は送れますか？</summary>
+          <p>アプリ内の「フィードバック」ボタンからフォームを開いて送れます（ブラウザが開きます）。不具合の報告・機能の要望・質問にどうぞ。</p>
         </details>
         <details>
           <summary>WizTreeと何が違いますか？</summary>

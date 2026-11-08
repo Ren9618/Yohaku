@@ -135,6 +135,13 @@ a:hover { text-decoration-thickness: 2px; }
 .dl-note {
   margin: 16px 0 0; font-size: .84rem; color: var(--sub); line-height: 1.9;
 }
+.dl-legacy {
+  max-width: 640px; margin: 14px auto 0;
+  font-size: .8rem; color: var(--sub); line-height: 1.9;
+}
+.dl-legacy a { color: var(--sub); }
+.dl-legacy a:hover { color: var(--accent); }
+.dl-legacy-price { margin: 12px 0 0; max-width: none; }
 
 /* 購入ボタン */
 .btn-buy {
