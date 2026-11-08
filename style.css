@@ -108,6 +108,12 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--sub); font-weight: 700; cursor: not-allowed;
   user-select: none;
 }
+.hero-price {
+  margin: 12px 0 0; font-size: .88rem; color: var(--sub);
+}
+.hero-price strong { color: var(--accent); font-size: 1.1rem; }
+.hero-price s { color: #6d7683; }
+
 .sp-br { display: none; }
 
 /* ---------- アプリ画面モック ---------- */
@@ -256,6 +262,42 @@ td.em::before {
   content: "●"; color: var(--accent); font-size: .6em;
   margin-right: 8px; vertical-align: 2px;
 }
+
+/* ---------- 価格 ---------- */
+.price-card {
+  max-width: 520px; margin: 0 auto; padding: 30px 26px 28px;
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius); text-align: center;
+  box-shadow: inset 0 0 0 1px var(--accent-soft);
+}
+.price-badge {
+  display: inline-block; margin: 0 0 14px; padding: 4px 14px;
+  font-size: .76rem; font-weight: 700; letter-spacing: .06em;
+  color: #1a1a00; background: var(--accent); border-radius: 999px;
+}
+.price-main {
+  margin: 0; font-size: clamp(2.4rem, 7vw, 3.1rem);
+  font-weight: 800; line-height: 1.1; color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.price-tax { margin-left: 6px; font-size: .82rem; font-weight: 600; color: var(--sub); }
+.price-list { margin: 8px 0 0; font-size: .92rem; color: var(--sub); }
+.price-list s { color: #6d7683; }
+.price-term {
+  margin: 18px 0 0; padding-top: 16px;
+  border-top: 1px solid var(--line); font-size: .86rem; color: var(--text);
+}
+.price-facts {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  margin: 16px 0 22px; padding: 0; list-style: none;
+}
+.price-facts li {
+  font-size: .8rem; color: var(--sub);
+  border: 1px solid var(--line); background: var(--bg-alt);
+  padding: 5px 12px; border-radius: 999px;
+}
+.price-card .btn-disabled { padding: 12px 28px; }
+.price-note { margin: 18px 0 0; font-size: .8rem; color: var(--sub); text-align: center; }
 
 /* ---------- 動作環境 ---------- */
 .req-list { margin: 0 0 20px; padding: 0; list-style: none; }

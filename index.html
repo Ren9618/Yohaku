@@ -4,16 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yohaku（よはく） - Windows用ディスク容量ビューア（開発中）</title>
-<meta name="description" content="Yohaku（よはく）は、フォルダ名ではなくゲーム名・用途でディスク容量が分かるWindows用ディスク容量ビューアです。現在開発中。価格・リリース時期は未定です。">
+<meta name="description" content="Yohaku（よはく）は、フォルダ名ではなくゲーム名・用途でディスク容量が分かるWindows用ディスク容量ビューアです。買い切りで定価1,980円、発売記念価格1,480円（リリース日から2週間）を予定。現在開発中です。">
 <meta property="og:title" content="Yohaku（よはく） - Windows用ディスク容量ビューア（開発中）">
 <meta property="og:site_name" content="Yohaku">
-<meta property="og:description" content="フォルダ名ではなく、ゲーム名・用途で容量が分かるWindows用ディスク容量ビューア。現在開発中。">
+<meta property="og:description" content="フォルダ名ではなく、ゲーム名・用途で容量が分かるWindows用ディスク容量ビューア。買い切り定価1,980円、発売記念価格1,480円を予定。現在開発中。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="_brand/icon-180.png">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Yohaku（よはく）",
+  "description": "フォルダ名ではなく、ゲーム名・用途で容量が分かるWindows用ディスク容量ビューア。",
+  "brand": { "@type": "Brand", "name": "Rayno Works" },
+  "offers": {
+    "@type": "Offer",
+    "price": "1980",
+    "priceCurrency": "JPY",
+    "availability": "https://schema.org/PreOrder",
+    "url": "https://ren9618.github.io/Yohaku/",
+    "seller": { "@type": "Organization", "name": "Rayno Works" }
+  }
+}
+</script>
 </head>
 <body>
 
@@ -31,6 +48,7 @@
     <nav class="site-nav" aria-label="ページ内リンク">
       <a href="#features">特徴</a>
       <a href="#screenshots">スクリーンショット</a>
+      <a href="#pricing">価格</a>
       <a href="#faq">FAQ</a>
       <a href="#requirements">動作環境</a>
     </nav>
@@ -52,6 +70,9 @@
       </p>
       <div class="hero-actions">
         <span class="btn-disabled" aria-disabled="true" title="リリース時に有効化されます">ダウンロード（準備中）</span>
+        <p class="hero-price">
+          買い切り 定価 <s>¥1,980</s> ／ 発売記念 <strong>¥1,480</strong>
+        </p>
       </div>
 
       <!-- アプリ画面モック（CSS描画・イメージ） -->
@@ -182,8 +203,29 @@
     </div>
   </section>
 
+  <!-- ▼ 価格 -->
+  <section class="section section-alt" id="pricing">
+    <div class="container">
+      <h2 class="section-title">価格</h2>
+      <p class="section-note">買い切りのみで、月額料金や追加課金はありません。<strong>現在開発中のため、リリース時期は未定です。</strong></p>
+      <div class="price-card">
+        <p class="price-badge">発売記念価格</p>
+        <p class="price-main">¥1,480<span class="price-tax">（税込）</span></p>
+        <p class="price-list">定価 <s>¥1,980</s></p>
+        <p class="price-term">発売記念価格の適用期間：リリース日から2週間</p>
+        <ul class="price-facts">
+          <li>買い切り（サブスクリプションなし）</li>
+          <li>管理者権限は不要</li>
+          <li>ネットワーク通信なし</li>
+        </ul>
+        <span class="btn-disabled" aria-disabled="true" title="リリース時に有効化されます">購入・ダウンロード（準備中）</span>
+      </div>
+      <p class="price-note">※ 表示価格はリリース時の予定です。変更する場合はこのページで事前に告知します。</p>
+    </div>
+  </section>
+
   <!-- ▼ 動作環境 -->
-  <section class="section section-alt" id="requirements">
+  <section class="section" id="requirements">
     <div class="container">
       <h2 class="section-title">動作環境</h2>
       <ul class="req-list">
@@ -204,7 +246,7 @@
       <div class="faq">
         <details>
           <summary>無料ですか？</summary>
-          <p>価格は未定です。決まり次第このページで案内します。</p>
+          <p>買い切りの有料ソフトです。定価は¥1,980（税込）で、リリース日から2週間は発売記念価格の¥1,480（税込）で販売する予定です。月額料金はありません。価格はリリース時の予定で、変更する場合はこのページで事前に告知します。</p>
         </details>
         <details>
           <summary>ファイルを削除できますか？</summary>
