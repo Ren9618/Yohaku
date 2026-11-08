@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yohaku（よはく） - Windows用ディスク容量ビューア（開発中）</title>
+<meta name="description" content="Yohaku（よはく）は、フォルダ名ではなくゲーム名・用途でディスク容量が分かるWindows用ディスク容量ビューアです。現在開発中。価格・リリース時期は未定です。">
+<meta property="og:title" content="Yohaku（よはく） - Windows用ディスク容量ビューア（開発中）">
+<meta property="og:site_name" content="Yohaku">
+<meta property="og:description" content="フォルダ名ではなく、ゲーム名・用途で容量が分かるWindows用ディスク容量ビューア。現在開発中。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="_brand/icon-180.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ▼ ヘッダー -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Yohaku 公式サイト トップへ">
+      <svg class="brand-mark" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+        <rect width="256" height="256" rx="56" fill="#0E1116"/>
+        <path d="M198.9 140.5A72 72 0 1 1 115.5 57.1" fill="none" stroke="#FFEA00"
+              stroke-width="38" stroke-linecap="round"/>
+      </svg>
+      <h1 class="brand-name">Yohaku</h1>
+    </a>
+    <nav class="site-nav" aria-label="ページ内リンク">
+      <a href="#features">特徴</a>
+      <a href="#screenshots">スクリーンショット</a>
+      <a href="#faq">FAQ</a>
+      <a href="#requirements">動作環境</a>
+    </nav>
+    <span class="dev-badge"><span class="dev-dot" aria-hidden="true"></span>開発中</span>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ▼ ヒーロー -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="hero-kicker">Windows用ディスク容量ビューア（WinUI 3）</p>
+      <p class="hero-catch">フォルダ名ではなく、<br class="sp-br">ゲーム名・用途で容量が分かる</p>
+      <p class="hero-lead">
+        Yohaku（よはく）は、PC全体のディスク容量を「ゲーム」や「用途」という
+        視点で把握できるビューアです。全ドライブを横断して集計し、
+        システム領域は別枠に分離するので「自分のファイルで使っている容量」がすぐ分かります。
+      </p>
+      <div class="hero-actions">
+        <span class="btn-disabled" aria-disabled="true" title="リリース時に有効化されます">ダウンロード（準備中）</span>
+      </div>
+
+      <!-- アプリ画面モック（CSS描画・イメージ） -->
+      <div class="mock" role="img"
+           aria-label="Yohakuの画面イメージ。左側にカテゴリ一覧、中央に項目別の容量一覧、右側に円グラフが並ぶ3ペイン構成">
+        <div class="mock-titlebar">
+          <span class="tb-dot" aria-hidden="true"></span><span class="tb-dot" aria-hidden="true"></span><span class="tb-dot" aria-hidden="true"></span>
+          <span class="tb-title">Yohaku</span>
+          <span class="tb-badge">開発中</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-side">
+            <span class="side-item is-active"><i class="ico-dot ico-a"></i>すべて</span>
+            <span class="side-item"><i class="ico-dot ico-b"></i>ゲーム</span>
+            <span class="side-item"><i class="ico-dot ico-c"></i>動画・画像</span>
+            <span class="side-item"><i class="ico-dot ico-d"></i>開発ツール</span>
+            <span class="side-item"><i class="ico-dot ico-e"></i>キャッシュ</span>
+            <span class="side-item"><i class="ico-dot ico-f"></i>システム</span>
+          </div>
+          <div class="mock-list">
+            <div class="list-row"><span class="row-name">VRChat</span><span class="row-bar"><i style="width:86%"></i></span><span class="row-size">68.2 GB</span></div>
+            <div class="list-row"><span class="row-name">Steam（ゲーム一覧）</span><span class="row-bar"><i style="width:64%"></i></span><span class="row-size">182.4 GB</span></div>
+            <div class="list-row"><span class="row-name">動画編集プロジェクト</span><span class="row-bar"><i style="width:47%"></i></span><span class="row-size">95.1 GB</span></div>
+            <div class="list-row"><span class="row-name">Unity / Adobe キャッシュ</span><span class="row-bar"><i style="width:29%"></i></span><span class="row-size">41.7 GB</span></div>
+            <div class="list-row"><span class="row-name">Windows（システム）</span><span class="row-bar row-bar-sys"><i style="width:38%"></i></span><span class="row-size">56.0 GB</span></div>
+          </div>
+          <div class="mock-chart">
+            <div class="donut"><span class="donut-hole">512 GB</span></div>
+            <div class="donut-legend">
+              <span><i class="lg lg-a"></i>ゲーム 41%</span>
+              <span><i class="lg lg-b"></i>メディア 18%</span>
+              <span><i class="lg lg-c"></i>キャッシュ 8%</span>
+              <span><i class="lg lg-d"></i>その他 33%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mock-caption">※ 画面はイメージです。実際の画面とは異なります。</p>
+    </div>
+  </section>
+
+  <!-- ▼ 特徴 -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="section-title">特徴</h2>
+      <div class="cards">
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3v9l6.4 4.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>PC全体を用途別に横断集計</h3>
+          <p>全ドライブをまとめて集計し、「用途（カテゴリ）」単位での容量が既定の見え方。ドライブやフォルダを順番にたどる必要がありません。</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="7" width="19" height="11" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 11v3M5.5 12.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="11.5" r="1.2" fill="currentColor"/><circle cx="18" cy="13.5" r="1.2" fill="currentColor"/></svg>
+          <h3>ゲーム名で容量が分かる</h3>
+          <p>Steamのマニフェストからゲームタイトル単位で容量を表示。「Game 3」ではなく「VRChat」のように分かります。Epic / GOG / Riot / HoYoPlay などのランチャーにも対応予定です。</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.4-3.2 7.6-8 9-4.8-1.4-8-4.6-8-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.3 2.3L15.5 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>システム領域の分離と照合</h3>
+          <p>Windows等のシステム領域は別枠に分離。解析結果とディスクの使用量を照合し、未解析分も表示するので、全体との整合が確認できます。</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l8.6-8.6a2 2 0 012.8 0l5.2 5.2a2 2 0 010 2.8L11 19H5a2 2 0 01-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="15.5" cy="8.5" r="1.4" fill="currentColor"/></svg>
+          <h3>安全度タグで整理判断</h3>
+          <p>再生成可能なキャッシュなどには「安全度タグ」を付け、合計容量を表示。VRChat・Unity・Adobeのキャッシュなど、「消しても大丈夫そうか」の目安がつかめます。</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h4L19.5 8.5a2.1 2.1 0 00-3-3L5 17z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13.5 6.5l3 3" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>手動分類で上書き</h3>
+          <p>自動判定が意図と異なる場合は、ユーザーがフォルダ単位で分類を修正できます。自分の使い方に合わせた集計結果になります。</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 4v16" stroke="currentColor" stroke-width="2"/><path d="M12.5 9h5M12.5 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>見やすい3ペイン画面</h3>
+          <p>左サイドバーのカテゴリ切替、中央の一覧、右の円グラフ・棒グラフの3ペイン構成。WinUI 3によるWindows 11に馴染む操作感です。</p>
+        </article>
+      </div>
+      <ul class="policy-list" aria-label="動作方針">
+        <li>管理者権限不要（読める範囲を解析）</li>
+        <li>ネットワーク通信なし</li>
+        <li>テレメトリなし</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ▼ スクリーンショット（プレースホルダ） -->
+  <section class="section section-alt" id="screenshots">
+    <div class="container">
+      <h2 class="section-title">スクリーンショット</h2>
+      <p class="section-note">開発中のため、実際の画面画像はまだありません。下記は仮置きのプレースホルダで、<strong>リリース前に実際の画面に差し替えます</strong>。</p>
+      <div class="shots">
+        <figure class="shot">
+          <div class="shot-frame" aria-hidden="true"><span class="shot-label">ダミー画像（差し替え予定）</span></div>
+          <figcaption>全ドライブ横断の用途別サマリー</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame" aria-hidden="true"><span class="shot-label">ダミー画像（差し替え予定）</span></div>
+          <figcaption>ゲームタイトル単位の容量一覧</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame" aria-hidden="true"><span class="shot-label">ダミー画像（差し替え予定）</span></div>
+          <figcaption>安全度タグとキャッシュ合計</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ▼ 比較 -->
+  <section class="section" id="difference">
+    <div class="container">
+      <h2 class="section-title">既存ツールとの違い</h2>
+      <p class="section-note">目的が「速く解析する」ことではなく「容量の中身を分かりやすく把握する」ことである、という観点での比較です。</p>
+      <div class="table-wrap">
+        <table>
+          <caption class="visually-hidden">一般的な容量解析ツールとYohakuの比較表</caption>
+          <thead>
+            <tr><th scope="col">観点</th><th scope="col">一般的な容量解析ツール</th><th scope="col">Yohaku</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">対象の見せ方</th><td>パス（フォルダ名）中心</td><td class="em">用途・ゲーム名中心</td></tr>
+            <tr><th scope="row">ゲーム認識</th><td>なし（自分で確認）</td><td class="em">Steamマニフェストから自動認識（対応ランチャー拡大予定）</td></tr>
+            <tr><th scope="row">システムの扱い</th><td>使用領域に混在</td><td class="em">別枠表示＋使用量との照合</td></tr>
+            <tr><th scope="row">安全度タグ</th><td>なし</td><td class="em">再生成可能なキャッシュ等にタグ表示</td></tr>
+            <tr><th scope="row">UI</th><td>従来型</td><td class="em">WinUI 3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ▼ 動作環境 -->
+  <section class="section section-alt" id="requirements">
+    <div class="container">
+      <h2 class="section-title">動作環境</h2>
+      <ul class="req-list">
+        <li>Windows 11</li>
+        <li>Windows 10（バージョン 2004 / ビルド 19041 以降）</li>
+      </ul>
+      <p class="section-note">
+        フレームワーク等の前提条件は本体の開発状況に合わせて確定させます。
+        <strong>開発中につき変更の可能性があります。</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ▼ FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>無料ですか？</summary>
+          <p>価格は未定です。決まり次第このページで案内します。</p>
+        </details>
+        <details>
+          <summary>ファイルを削除できますか？</summary>
+          <p>現在の版に削除機能はありません。容量の把握と整理判断のためのツールです。</p>
+        </details>
+        <details>
+          <summary>管理者権限は必要ですか？</summary>
+          <p>不要です。通常権限で読める範囲を解析します。</p>
+        </details>
+        <details>
+          <summary>個人情報やファイル情報が送信されますか？</summary>
+          <p>ネットワーク通信を行いません。解析はすべてPC内で完結します。</p>
+        </details>
+        <details>
+          <summary>WizTreeと何が違いますか？</summary>
+          <p>速さではなく分かりやすさが目的です。用途やゲーム名で容量を把握できます。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ▼ フッター -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-dev">
+      開発: <a href="https://ren9618.github.io/" rel="noopener">レイノワークス（Rayno Works）</a>
+    </p>
+    <ul class="footer-links">
+      <li><a href="https://megrab.mikumiku.online/" rel="noopener">Megrab Studio</a></li>
+      <li><a href="https://ren9618.github.io/Hodozip/" rel="noopener">Hodozip</a></li>
+    </ul>
+    <p class="copyright">Copyright (c) 2026 Rayno Works (Ren9618)</p>
+  </div>
+</footer>
+
+</body>
+</html>

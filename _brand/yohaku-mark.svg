@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Yohaku">
+  <title>Yohaku</title>
+  <!-- タイル -->
+  <rect width="256" height="256" rx="56" fill="#0E1116"/>
+  <!-- リング: 中心(128,128) 半径72 線幅38 端は丸 10度から260度 -->
+  <path d="M198.9 140.5A72 72 0 1 1 115.5 57.1" fill="none" stroke="#FFEA00"
+        stroke-width="38" stroke-linecap="round"/>
+</svg>
