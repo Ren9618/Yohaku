@@ -8,7 +8,7 @@
 
 ## 出現箇所一覧
 
-行番号は最終更新時点（v6: v1.1.0 リリース対応後）のもの。
+行番号は最終更新時点（v7: 法務ページ新設・v1.2.0 表記後）のもの。
 
 ### index.html
 
@@ -27,11 +27,12 @@
 | 10b | 84 | ヒーローの v1.0.0（アップデート確認なし版）リンク（Releases URL 内） | Yohaku | なし |
 | 11 | 93 | 画面モックの `role="img"` の `aria-label` | Yohaku | なし |
 | 12 | 96 | 画面モックのタイトルバー表示 | Yohaku | なし |
-| 13 | 181 | 実物スクリーンショット `img.screenshot-main.png` の `alt` | Yohaku | なし |
-| 14 | 195 | 比較表の `<caption>` | Yohaku | なし |
-| 15 | 197 | 比較表のヘッダー `<th scope="col">` | Yohaku | なし |
-| 16 | 231–232 | 価格カードのダウンロードボタン（Releases URL 内） | Yohaku | なし |
-| 16b | 234 | 価格カードの v1.0.0（アップデート確認なし版）リンク（Releases URL 内） | Yohaku | なし |
+| 13 | 186 | 実物スクリーンショット `img.screenshot-main.png` の `alt` | Yohaku | なし |
+| 14 | 200 | 比較表の `<caption>` | Yohaku | なし |
+| 15 | 202 | 比較表のヘッダー `<th scope="col">` | Yohaku | なし |
+| 16 | 237–238 | 価格カードのダウンロードボタン（Releases URL 内） | Yohaku | なし |
+| 16b | 240 | 価格カードの v1.0.0（アップデート確認なし版）リンク（Releases URL 内） | Yohaku | なし |
+| 17 | フッター `.footer-dev`／`.copyright` | Yohaku（サイトURL・表記内） | なし |
 
 ### checkout.js
 
@@ -87,11 +88,28 @@
 
 ## 関連: バージョン表記の出現箇所
 
-バージョンを上げる場合は次の箇所を確認する（現在: v1.1.0）。
+バージョンを上げる場合は次の箇所を確認する（現在: v1.2.0）。
 
 | # | ファイル | 場所 | 現在の表記 |
 |---|----------|------|-----------|
-| 1 | index.html | ヒーロー `.dl-note`（現在のバージョン） | 1.1.0 |
-| 2 | index.html | 画面モックのタイトルバーバッジ `.tb-badge` | v1.1.0 |
-| 3 | index.html | 動作環境 `.section-note`（バージョン 1.1.0 時点） | 1.1.0 |
+| 1 | index.html | ヒーロー `.dl-note`（現在のバージョン） | 1.2.0 |
+| 2 | index.html | 画面モックのタイトルバーバッジ `.tb-badge` | v1.2.0 |
+| 3 | index.html | 動作環境 `.section-note`（バージョン 1.2.0 時点） | 1.2.0 |
 | 4 | index.html | ヒーロー `.dl-legacy` / 価格カード `.dl-legacy-price`（v1.0.0 固定リンクの版数） | v1.0.0（固定・変更しない） |
+
+
+## v7 追加分（法務ページ3点・購入前リンク・legal-src 削除）
+
+- 法務ページ `terms/index.html`・`privacy/index.html`・`tokushoho/index.html` を新設。本文は正本テキスト（ドラフト v1）を一字一句変えず HTML 化（条・項の見出し化と特商法の定義リスト化のみ）。生成後に素材フォルダ `legal-src/` は削除済み（GitHub Pages での素材公開防止。正本は別途保管）。
+- index.html 価格カードに購入前確認リンク行 `.buy-legal`（利用規約・特商法表記へのリンク。製品名を含まない）を追加。
+- index.html フッターに利用規約／プライバシーポリシー／特商法表記／フィードバックフォーム／support@mikumiku.online を追加（URL 内に Yohaku を含むのはフィードバックフォームを除き無し。著作権表記は `© 2026 Rayno Works (Ren9618)` に統一）。
+
+### 法務ページ内の出現箇所
+
+| ファイル | 場所 | 表記 | 読み付き |
+|---|------|------|----------|
+| terms/index.html | `<title>`・meta description・h1・前文・第1条 | Yohaku（よはく） | あり（title・h1） |
+| privacy/index.html | `<title>`・meta description・h1・前文 | Yohaku（よはく） | あり（title・h1） |
+| tokushoho/index.html | `<title>`・meta description・h1・商品名・販売URL | Yohaku | あり（title・h1） |
+
+※ 法務ページ本文は正本テキストが正であり、改名時は正本（アプリ repo 側も同一文面）から更新すること。サイト側で単独に表記を変えてはいけない。
