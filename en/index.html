@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yohaku - Disk Space Viewer for Windows</title>
+<meta name="description" content="Yohaku is a disk space viewer for Windows that shows usage by game title and purpose, not by folder names. One-time purchase: list price ¥1,980, launch price ¥1,480 (for two weeks from release). Includes a full-featured 7-day free trial.">
+<link rel="canonical" href="https://ren9618.github.io/Yohaku/en/">
+<link rel="alternate" hreflang="ja" href="https://ren9618.github.io/Yohaku/">
+<link rel="alternate" hreflang="en" href="https://ren9618.github.io/Yohaku/en/">
+<link rel="alternate" hreflang="x-default" href="https://ren9618.github.io/Yohaku/">
+<meta property="og:title" content="Yohaku - Disk Space Viewer for Windows">
+<meta property="og:site_name" content="Yohaku">
+<meta property="og:description" content="A disk space viewer for Windows that shows usage by game title and purpose, not by folder names. One-time purchase: list price ¥1,980, launch price ¥1,480 (for two weeks from release).">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ren9618.github.io/Yohaku/en/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../_brand/icon-180.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Yohaku",
+  "description": "A disk space viewer for Windows that shows usage by game title and purpose, not by folder names.",
+  "image": "https://ren9618.github.io/Yohaku/img/screenshot-main.png",
+  "brand": { "@type": "Brand", "name": "Rayno Works" },
+  "offers": {
+    "@type": "Offer",
+    "price": "1480",
+    "priceCurrency": "JPY",
+    "availability": "https://schema.org/InStock",
+    "url": "https://ren9618.github.io/Yohaku/en/",
+    "seller": { "@type": "Organization", "name": "Rayno Works" },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "JP",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 7
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ▼ Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Yohaku official site - back to top">
+      <svg class="brand-mark" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+        <rect width="256" height="256" rx="56" fill="#0E1116"/>
+        <path d="M198.9 140.5A72 72 0 1 1 115.5 57.1" fill="none" stroke="#FFEA00"
+              stroke-width="38" stroke-linecap="round"/>
+      </svg>
+      <h1 class="brand-name">Yohaku</h1>
+    </a>
+    <nav class="site-nav" aria-label="Page sections">
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#requirements">Requirements</a>
+      <a href="../" hreflang="ja">日本語</a>
+    </nav>
+    <span class="dev-badge"><span class="dev-dot" aria-hidden="true"></span>On sale</span>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ▼ Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="hero-kicker">Disk space viewer for Windows (WinUI 3)</p>
+      <p class="hero-catch">See your disk usage by game and purpose,<br class="sp-br">not by folder names</p>
+      <p class="hero-lead">
+        Yohaku is a viewer that shows how your entire PC's disk space is used,
+        organized by games and purposes. It aggregates across all drives and keeps
+        system areas separate, so you can see at a glance how much space your own
+        files actually take.
+      </p>
+      <div class="hero-actions">
+        <div class="dl-buttons">
+          <a class="btn" href="https://github.com/Ren9618/Yohaku/releases/latest/download/Yohaku-Setup.exe">Download installer (recommended)</a>
+          <a class="btn btn-sub" href="https://github.com/Ren9618/Yohaku/releases/latest/download/Yohaku-Portable.zip">Portable version (zip)</a>
+        </div>
+        <p class="dl-note">
+          The download starts a 7-day free trial with all features unlocked.<br>
+          A license purchase is required for continued use.<br>
+          The portable version needs no installation - just extract the zip and run it.<br>
+          Current version: <strong>1.6.0</strong><br>
+          Note: the app interface is currently in Japanese only. English UI support is in the works.
+        </p>
+        <p class="dl-legacy">
+          From v1.1, Yohaku includes an optional update-check feature. If you prefer no update checks at all, <strong>v1.0.0</strong> (without the update checker) remains available. The same license key works with both versions.<br>
+          <a href="https://github.com/Ren9618/Yohaku/releases/download/v1.0.0/Yohaku-Setup.exe">v1.0.0 Installer</a> / <a href="https://github.com/Ren9618/Yohaku/releases/download/v1.0.0/Yohaku-Portable.zip">v1.0.0 Portable (zip)</a>
+        </p>
+        <p class="hero-price">
+          One-time purchase - List price <s>¥1,980</s> / Launch price <strong>¥1,480</strong>
+        </p>
+      </div>
+
+      <!-- App window mock (CSS illustration) -->
+      <div class="mock" role="img"
+           aria-label="Illustration of the Yohaku window: a three-pane layout with a category list on the left, items by size in the center, and a donut chart on the right">
+        <div class="mock-titlebar">
+          <span class="tb-dot" aria-hidden="true"></span><span class="tb-dot" aria-hidden="true"></span><span class="tb-dot" aria-hidden="true"></span>
+          <span class="tb-title">Yohaku</span>
+          <span class="tb-badge">v1.6.0</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-side">
+            <span class="side-item is-active"><i class="ico-dot ico-a"></i>All</span>
+            <span class="side-item"><i class="ico-dot ico-b"></i>Games</span>
+            <span class="side-item"><i class="ico-dot ico-c"></i>Videos &amp; Images</span>
+            <span class="side-item"><i class="ico-dot ico-d"></i>Dev tools</span>
+            <span class="side-item"><i class="ico-dot ico-e"></i>Cache</span>
+            <span class="side-item"><i class="ico-dot ico-f"></i>System</span>
+          </div>
+          <div class="mock-list">
+            <div class="list-row"><span class="row-name">VRChat</span><span class="row-bar"><i style="width:86%"></i></span><span class="row-size">68.2 GB</span></div>
+            <div class="list-row"><span class="row-name">Steam (game library)</span><span class="row-bar"><i style="width:64%"></i></span><span class="row-size">182.4 GB</span></div>
+            <div class="list-row"><span class="row-name">Video editing projects</span><span class="row-bar"><i style="width:47%"></i></span><span class="row-size">95.1 GB</span></div>
+            <div class="list-row"><span class="row-name">Unity / Adobe cache</span><span class="row-bar"><i style="width:29%"></i></span><span class="row-size">41.7 GB</span></div>
+            <div class="list-row"><span class="row-name">Windows (system)</span><span class="row-bar row-bar-sys"><i style="width:38%"></i></span><span class="row-size">56.0 GB</span></div>
+          </div>
+          <div class="mock-chart">
+            <div class="donut"><span class="donut-hole">512 GB</span></div>
+            <div class="donut-legend">
+              <span><i class="lg lg-a"></i>Games 41%</span>
+              <span><i class="lg lg-b"></i>Media 18%</span>
+              <span><i class="lg lg-c"></i>Cache 8%</span>
+              <span><i class="lg lg-d"></i>Other 33%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mock-caption">* This is an illustration and may differ from the actual interface.</p>
+    </div>
+  </section>
+
+  <!-- ▼ Features -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="section-title">Features</h2>
+      <div class="cards">
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3v9l6.4 4.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>Your whole PC, aggregated by purpose</h3>
+          <p>Aggregates all drives together and shows usage by purpose (category) by default. No need to walk through drives and folders one by one.</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="7" width="19" height="11" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 11v3M5.5 12.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="11.5" r="1.2" fill="currentColor"/><circle cx="18" cy="13.5" r="1.2" fill="currentColor"/></svg>
+          <h3>Usage by game title</h3>
+          <p>Shows sizes per game title, resolved from Steam manifests - "VRChat", not "Game 3". In addition to Steam, game names are resolved for Epic / GOG / Riot, and HoYoPlay titles are resolved from install paths.</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.4-3.2 7.6-8 9-4.8-1.4-8-4.6-8-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.3 2.3L15.5 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>System areas separated and reconciled</h3>
+          <p>System areas such as Windows are shown in a separate group. Results are reconciled against actual disk usage, with any unanalyzed remainder shown, so the totals add up.</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l8.6-8.6a2 2 0 012.8 0l5.2 5.2a2 2 0 010 2.8L11 19H5a2 2 0 01-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="15.5" cy="8.5" r="1.4" fill="currentColor"/></svg>
+          <h3>Safety tags help you decide what to clean</h3>
+          <p>Regenerable caches and similar items get safety tags, with their total size shown - VRChat, Unity and Adobe caches and more - so you can judge what is likely safe to remove.</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h4L19.5 8.5a2.1 2.1 0 00-3-3L5 17z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13.5 6.5l3 3" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>Manual reclassification</h3>
+          <p>If the automatic classification doesn't match your intent, you can reclassify folders manually, so the totals reflect how you actually use your PC.</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 4v16" stroke="currentColor" stroke-width="2"/><path d="M12.5 9h5M12.5 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>A clear three-pane layout</h3>
+          <p>Category sidebar on the left, item list in the center, donut and bar charts on the right. Built with WinUI 3 to feel at home on Windows 11.</p>
+        </article>
+        <article class="card">
+          <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12l-1.5 18h-9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9.5 8v9M14.5 8v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>Delete via the Recycle Bin</h3>
+          <p>Select space-hogging items and send them to the Windows Recycle Bin right from the app (never permanently deleted). A confirmation dialog shows the targets and total size first. Important paths such as system areas are protected and cannot be selected.</p>
+        </article>
+      </div>
+      <ul class="policy-list" aria-label="How it works">
+        <li>No administrator rights required (analyzes what your account can read)</li>
+        <li>No scan data is sent anywhere</li>
+        <li>No telemetry</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ▼ Screenshots -->
+  <section class="section section-alt" id="screenshots">
+    <div class="container">
+      <h2 class="section-title">Screenshots</h2>
+      <p class="section-note">* The image shows a scan of fixture data (sample data: 21 files / 18.4 MB). Actual contents depend on your PC. The app interface is currently in Japanese.</p>
+      <figure class="shot">
+        <img class="shot-img" src="../img/screenshot-main.png"
+             alt="Yohaku's main window: a three-pane layout with the category list on the left, items by size in the center, and a category donut chart and ranked list on the right. The status bar shows the trial period remaining"
+             width="1280" height="800" loading="lazy">
+        <figcaption>Main window (scanning fixture data - full-featured 7-day trial)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ▼ Comparison -->
+  <section class="section" id="difference">
+    <div class="container">
+      <h2 class="section-title">How Yohaku differs from typical tools</h2>
+      <p class="section-note">This comparison is about purpose: not "scan faster", but "understand what is using your space".</p>
+      <div class="table-wrap">
+        <table>
+          <caption class="visually-hidden">Comparison of typical disk analyzers and Yohaku</caption>
+          <thead>
+            <tr><th scope="col">Aspect</th><th scope="col">Typical disk analyzers</th><th scope="col">Yohaku</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">How usage is shown</th><td>By path (folder names)</td><td class="em">By purpose and game title</td></tr>
+            <tr><th scope="row">Game recognition</th><td>None (check manually)</td><td class="em">Automatic, from Steam manifests (Steam / Epic / GOG / Riot and more)</td></tr>
+            <tr><th scope="row">System areas</th><td>Mixed into used space</td><td class="em">Shown separately, reconciled with disk usage</td></tr>
+            <tr><th scope="row">Safety tags</th><td>None</td><td class="em">Tags on regenerable caches and similar items</td></tr>
+            <tr><th scope="row">UI</th><td>Legacy</td><td class="em">WinUI 3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ▼ Pricing -->
+  <section class="section section-alt" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Pricing</h2>
+      <p class="section-note">One-time purchase only - no monthly fees or add-on charges. Start with the <strong>7-day trial</strong> and try every feature.</p>
+      <div class="price-card">
+        <p class="price-badge">Launch price</p>
+        <p class="price-main">¥1,480<span class="price-tax"> (tax included)</span></p>
+        <p class="price-list">List price <s>¥1,980</s></p>
+        <p class="price-term">Launch price period: two weeks from release (until November 23)</p>
+        <ul class="price-facts">
+          <li>One-time purchase (no subscription)</li>
+          <li>Full-featured 7-day free trial</li>
+          <li>Unconditional refunds within 7 days of purchase</li>
+          <li>No administrator rights required</li>
+          <li>No scan data is sent anywhere</li>
+        </ul>
+        <button type="button" class="btn btn-buy" id="buy-button">Buy now at the launch price - ¥1,480</button>
+        <p class="buy-legal">Please review the <a href="../terms/">Terms of Use</a> and the <a href="../tokushoho/">Act on Specified Commercial Transactions page</a> (both in Japanese) before purchasing</p>
+        <p class="buy-error" id="buy-error" hidden role="alert">Couldn't open the checkout page. Please wait a moment and try again. If the problem persists, contact support@mikumiku.online.</p>
+        <div class="dl-buttons dl-buttons-price">
+          <a class="btn btn-sub" href="https://github.com/Ren9618/Yohaku/releases/latest/download/Yohaku-Setup.exe">Installer (recommended)</a>
+          <a class="btn btn-sub" href="https://github.com/Ren9618/Yohaku/releases/latest/download/Yohaku-Portable.zip">Portable (zip)</a>
+        </div>
+        <p class="dl-legacy dl-legacy-price">Version without update checks (v1.0.0): <a href="https://github.com/Ren9618/Yohaku/releases/download/v1.0.0/Yohaku-Setup.exe">Installer</a> / <a href="https://github.com/Ren9618/Yohaku/releases/download/v1.0.0/Yohaku-Portable.zip">Portable (zip)</a></p>
+        <p class="buy-note">Download first and try it free for 7 days (all features). A license purchase is required for continued use.</p>
+      </div>
+      <p class="price-note">* All prices include tax. The license is a one-time (perpetual) purchase and can be used on up to 3 machines.</p>
+    </div>
+  </section>
+
+  <!-- ▼ Requirements -->
+  <section class="section" id="requirements">
+    <div class="container">
+      <h2 class="section-title">System requirements</h2>
+      <ul class="req-list">
+        <li>Windows 11</li>
+        <li>Windows 10 (version 2004 / build 19041 or later)</li>
+      </ul>
+      <p class="section-note">
+        Requirements as of version 1.6.0.
+        <strong>Any changes will be announced on this page in advance.</strong>
+        The app interface is currently in Japanese only; English UI support is in the works.
+      </p>
+    </div>
+  </section>
+
+  <!-- ▼ FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>Is it free?</summary>
+          <p>No - it's a paid app with a one-time price. The list price is ¥1,980 (tax included); for two weeks from release, it's on sale at the launch price of ¥1,480 (tax included). There are no monthly fees.</p>
+        </details>
+        <details>
+          <summary>Can I try it first?</summary>
+          <p>Yes. The download gives you 7 days with all features unlocked, free of charge. A license purchase is required for continued use.</p>
+        </details>
+        <details>
+          <summary>Can I get a refund?</summary>
+          <p>Yes. Within 7 days of purchase, refunds are unconditional - no reason needed.</p>
+        </details>
+        <details>
+          <summary>Which OS versions are supported?</summary>
+          <p>Windows 11, and Windows 10 (version 2004 / build 19041 or later).</p>
+        </details>
+        <details>
+          <summary>Are updates automatic?</summary>
+          <p>No. By default, updates are only checked when you press the "Check for updates" button, which looks for the latest version on GitHub. You can switch to checking at startup in settings, but even then nothing is downloaded or installed automatically. A v1.0.0 build without any update checking is also available.</p>
+        </details>
+        <details>
+          <summary>How many machines can I use it on?</summary>
+          <p>One purchased license key can be used on up to 3 machines.</p>
+        </details>
+        <details>
+          <summary>How do I receive my license key after purchase?</summary>
+          <p>Your license key is shown on the purchase completion screen and also sent to the email address you provided. Paste it into the license field in the app.</p>
+        </details>
+        <details>
+          <summary>Can it delete files?</summary>
+          <p>Yes. Since v1.2, you can send selected files and folders to the Windows Recycle Bin. It never permanently deletes. Important paths such as system areas are protected and cannot be selected. To undo, restore the items from the Recycle Bin.</p>
+        </details>
+        <details>
+          <summary>Does it need administrator rights?</summary>
+          <p>No. It analyzes what a standard user account can read.</p>
+        </details>
+        <details>
+          <summary>Is any personal or file information sent?</summary>
+          <p>Scan and analysis data is never sent anywhere; analysis happens entirely on your PC. Network access occurs only for: (1) license verification, (2) update checks (by default, only when you press the button; automatic at startup only if you enable it in settings), and (3) opening the feedback form (in your own browser).</p>
+        </details>
+        <details>
+          <summary>How can I send feedback or requests?</summary>
+          <p>Open the form from the "Feedback" button in the app (it opens in your browser). Bug reports, feature requests and questions are welcome. (The form is in Japanese.)</p>
+        </details>
+        <details>
+          <summary>How is it different from WizTree?</summary>
+          <p>The goal is clarity, not speed: Yohaku lets you grasp your usage by purpose and game title.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ▼ Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-dev">
+      Developer: <a href="https://ren9618.github.io/" rel="noopener">Rayno Works</a>
+      / Contact: <a href="mailto:support@mikumiku.online">support@mikumiku.online</a>
+    </p>
+    <ul class="footer-links">
+      <li><a href="../terms/">Terms of Use (Japanese)</a></li>
+      <li><a href="../privacy/">Privacy Policy (Japanese)</a></li>
+      <li><a href="../tokushoho/">Act on Specified Commercial Transactions (Japanese)</a></li>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfSuPLTinqExS61uuCoh1453_3kNF-ksdr_sGwVtQI4NySszA/viewform" rel="noopener">Feedback form (Japanese)</a></li>
+      <li><a href="https://megrab.mikumiku.online/" rel="noopener">Megrab Studio</a></li>
+      <li><a href="https://ren9618.github.io/Hodozip/" rel="noopener">Hodozip</a></li>
+    </ul>
+    <p class="copyright">© 2026 Rayno Works (Ren9618)</p>
+  </div>
+</footer>
+
+<script src="../checkout.js" defer></script>
+
+</body>
+</html>

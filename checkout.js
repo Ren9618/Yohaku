@@ -1,6 +1,7 @@
 /* Yohaku 購入ボタン
    ライセンスサーバーで Checkout セッションを作成し、応答の url（Stripe決済ページ）へ遷移する。
-   このページで JS を使うのはこの導線のみ。他のページには JS を追加しないこと。 */
+   トップページ（日本語／英語）で JS を使うのはこの導線のみ。他のページには JS を追加しないこと。
+   英語ページ（/en/）と共用するため、処理中ラベルは html の lang で出し分ける。 */
 (function () {
   "use strict";
 
@@ -21,7 +22,7 @@
 
     var originalLabel = button.textContent;
     button.disabled = true;
-    button.textContent = "処理中…";
+    button.textContent = document.documentElement.lang === "en" ? "Processing…" : "処理中…";
     if (errorBox) errorBox.hidden = true;
 
     fetch(ENDPOINT, {

@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ren9618.github.io/Yohaku/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ren9618.github.io/Yohaku/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ren9618.github.io/Yohaku/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ren9618.github.io/Yohaku/"/>
+  </url>
+  <url>
+    <loc>https://ren9618.github.io/Yohaku/en/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ren9618.github.io/Yohaku/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ren9618.github.io/Yohaku/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ren9618.github.io/Yohaku/"/>
   </url>
   <url>
     <loc>https://ren9618.github.io/Yohaku/terms/</loc>
